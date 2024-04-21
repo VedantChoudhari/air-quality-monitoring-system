@@ -99,3 +99,26 @@ p {
     color: #7dd8e4;
     font-size: 20px;
 }
+
+
+#errBox {
+    /* display: flex; */
+    display: none;
+    position: fixed;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 75vh;
+    background-color: white;
+    width: 80%;
+    border: solid black 0.1rem;
+    border-radius: 2rem;
+    color: red;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 1rem;
+    z-index: 999;
+}
