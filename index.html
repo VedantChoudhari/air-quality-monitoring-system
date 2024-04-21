@@ -43,6 +43,15 @@
     </div>
   </div>
 
+  <div id="errBox">
+    <h2>Emergency Warning</h2>
+    <h3 id="warning_title"></h3>
+    <h3 id="warning_detail"></h3>
+    <h2 id="pol">Police Number: 112</h2>
+    <h2 id="amb">Ambulance Number: 108</h2>
+    <button type="button" onclick="activate_error_box(false, false)">Close</button>
+  </div>
+
 
   <script src="./qualityReadings.js"></script>
   <script src="./plotlyAQHum.js"> </script>
@@ -50,7 +59,6 @@
   <script src="./temperature.js"></script>
   <script src="./triggerError.js"></script>
   
-
 </body>
 
 </html>
