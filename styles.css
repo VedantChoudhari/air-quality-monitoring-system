@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+    align-items: center;
+}
+
+body {
+    background-color: #151e21;
+    /* Dark theme background */
+    font-family: "Arial", sans-serif;
+    color: #7dd8e4;
+    text-align: center;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #151e21;
+    /* Dark theme page background */
+}
+
+.page h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 80%;
+}
+
+.item {
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem;
+    background-color: #4d4d4d;
+    /* Dark theme item background */
+    border-radius: 20px;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);
+    /* Shadow for dark theme */
+    transition: transform 0.3s ease;
+}
+
+.item:hover {
+    transform: translateY(-10px);
+}
+
+.item h2 {
+    font-size: 2.5rem;
+}
+
+.item p {
+    font-size: 2.5rem;
+    color: #fff;
+    /* Text color for dark theme */
+}
+
+.item .big-font {
+    font-size: 2.5rem;
+}
+
+@media screen and (max-width: 768px) {
+    .data {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .item {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+.name {
+    color: #151e21;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.graph {
+    text-align: center;
+}
+
+.hname {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+p {
+    color: #7dd8e4;
+    font-size: 20px;
+}
