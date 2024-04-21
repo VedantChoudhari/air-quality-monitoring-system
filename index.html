@@ -15,12 +15,16 @@
 
     <div id="app"> </div>
     
-    <!-- Bhushan: add temp buttons here -->
+    <div id="delete_later">
+      <button onclick="activate_error_box(true, false)">Fire</button>
+      <button onclick="activate_error_box(false, true)">Gas</button>
+      <button onclick="activate_error_box(true, true)">Both</button>
+    </div>
 
     <br />
     <p> Temperature Graph</p>
     <div class="hname">
-      <div id="scichart"  style="width:800px; height:400px;margin-left: 4rem;">
+      <div id="scichart" style="width:800px; height:400px;margin-left: 4rem;">
       </div>
       <br />
       <br />
@@ -44,8 +48,8 @@
   <script src="./plotlyAQHum.js"> </script>
   <script src="./plotlyHumTemp.js"></script>
   <script src="./temperature.js"></script>
+  <script src="./triggerError.js"></script>
   
-    <!-- Bhushan: add alert script here -->
 
 </body>
 
