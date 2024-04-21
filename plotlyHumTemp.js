@@ -23,7 +23,7 @@ var data = [trace];
 var layout = {
   // title: '3D Scatter plot of Temperature vs Humidity',
   autosize: false,
-  width: 700,
+  width: 800,
   height: 500,
   margin: {
     l: 0,

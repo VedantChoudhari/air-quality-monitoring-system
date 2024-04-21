@@ -1,62 +1,54 @@
-z1 = [
-  [8.83, 8.89, 8.81, 8.87, 8.9, 8.87],
-  [8.89, 8.94, 8.85, 8.94, 8.96, 8.92],
-  [8.84, 8.9, 8.82, 8.92, 8.93, 8.91],
-  [8.79, 8.85, 8.79, 8.9, 8.94, 8.92],
-  [8.79, 8.88, 8.81, 8.9, 8.95, 8.92],
-  [8.8, 8.82, 8.78, 8.91, 8.94, 8.92],
-  [8.75, 8.78, 8.77, 8.91, 8.95, 8.92],
-  [8.8, 8.8, 8.77, 8.91, 8.95, 8.94],
-  [8.74, 8.81, 8.76, 8.93, 8.98, 8.99],
-  [8.89, 8.99, 8.92, 9.1, 9.13, 9.11],
-  [8.97, 8.97, 8.91, 9.09, 9.11, 9.11],
-  [9.04, 9.08, 9.05, 9.25, 9.28, 9.27],
-  [9, 9.01, 9, 9.2, 9.23, 9.2],
-  [8.99, 8.99, 8.98, 9.18, 9.2, 9.19],
-  [8.93, 8.97, 8.97, 9.18, 9.2, 9.18]
-];
+var x_data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; //feel like
+var y_data = [30, 45, 55, 70, 80, 85, 90, 95, 100, 100]; // Humidity (%)
+var z_data = [15, 20, 25, 18, 23, 27, 20, 22, 25, 24]; // air quality 
 
-z2 = [];
-for (var i = 0; i < z1.length; i++) {
-  z2_row = [];
-  for (var j = 0; j < z1[i].length; j++) {
-    z2_row.push(z1[i][j] + 1);
-  }
-  z2.push(z2_row);
-}
-
-// z2 = [8.83, 8.89, 8.81, 8.87, 8.9, 8.87, 8.89, 8.94, 8.85, 8.94, 8.96, 8.92, 8.84, 8.9, 8.82, 8.92, 8.93, 8.91, 8.79, 8.85, 8.79, 8.9, 8.94, 8.92, 8.79, 8.88, 8.81, 8.9, 8.95, 8.92, 8.8, 8.82, 8.78, 8.91, 8.94, 8.92, 8.75, 8.78, 8.77, 8.91, 8.95, 8.92, 8.8, 8.8, 8.77, 8.91, 8.95, 8.94, 8.74, 8.81, 8.76, 8.93, 8.98, 8.99, 8.89, 8.99, 8.92, 9.1, 9.13, 9.11, 8.97, 8.97, 8.91, 9.09, 9.11, 9.11, 9.04, 9.08, 9.05, 9.25, 9.28, 9.27, 9, 9.01, 9, 9.2, 9.23, 9.2, 8.99, 8.99, 8.98, 9.18, 9.2, 9.19, 8.93, 8.97, 8.97, 9.18, 9.2, 9.1] 
-
-z3 = []
-for (var i = 0; i < z1.length; i++) {
-    z3_row = [];
-    for (var j = 0; j < z1[i].length; j++) {
-        z3_row.push(z1[i][j] - 1);
-    }
-    z3.push(z3_row);
-}
-
-var data_z1 = { z: z1, type: 'surface', colorscale: 'YlGnBu', opacity: 0.9 };
-var data_z2 = { z: z2, showscale: false, opacity: 0.9, type: 'surface', colorscale: 'YlGnBu' };
-var data_z3 = { z: z3, showscale: false, opacity: 0.9, type: 'surface', colorscale: 'YlGnBu' };
-
-var layout = {
-
-    autosize: false,
-    width: 700,
-    height: 500,
-    scene: {
-        xaxis: { color: 'white', gridcolor: 'white' },
-        yaxis: { color: 'white', gridcolor: 'white' },
-        zaxis: { color: 'white', gridcolor: 'white' },
-        bgcolor: ''
+var trace = {
+  x: x_data,
+  y: y_data,
+  z: z_data,
+  mode: 'markers',
+  marker: {
+    color: 'rgb(23, 190, 207)',
+    size: 12,
+    line: {
+      color: 'rgba(217, 217, 217, 0.14)',
+      width: 0.5
     },
-    paper_bgcolor: 'rgb(10,10,10)',
-    font: {
-        color: 'white'
-    }
+    opacity: 0.8
+  },
+  type: 'scatter3d'
 };
 
-Plotly.newPlot('mydiv', [data_z1, data_z2, data_z3], layout);
+var data = [trace];
+var layout = {
+  // title: '3D Scatter plot of Temperature vs Humidity',
+  autosize: false,
+  width: 800,
+  height: 500,
+  margin: {
+    l: 0,
+    r: 0,
+    b: 0,
+    t: 65
+  },
+  paper_bgcolor: 'rgb(10,10,10)',
+  scene: {
+    xaxis: {
+      color: 'white'
+    },
+    yaxis: {
+      color: 'white'
+    },
+    zaxis: {
+      color: 'white'
+    }
+  },
+  camera: {
+    up: { x: 10, y: 10, z: 0 },
+    center: { x: 0, y: 0, z: 0 },
+    eye: { x: 5, y: 5, z: 1 }
+  },
 
+};
 
+Plotly.newPlot('mydiv', data, layout);
