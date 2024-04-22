@@ -14,21 +14,21 @@ function activate_error_box(fire, gas) {
 
             warning_detail.innerHTML = "Fire and Harmful gases is Detected in your house Evacuate!!";
 
-            showNotification("Alert", "Elevated levels of harmful gases and fire have been detected in your residence. Please evacuate immediately for your safety!”");
+            showNotification("Emergency Alert!", "Elevated levels of harmful gases and fire have been detected in your residence. Please evacuate immediately for your safety!”");
         }
         else if (fire) {
             warning_title.innerHTML = "Fire";
 
             warning_detail.innerHTML = "Fire Detected in your house   Evacuate!!";
 
-            showNotification("Fire ", "Fire is detected at your residence!! Evacuate immediately for your safety ");
+            showNotification("Fire Emergency!", "Fire is detected at your residence!! Evacuate immediately for your safety ");
         }
         else if (gas) {
             warning_title.innerHTML = "Gas";
 
             warning_detail.innerHTML = "Combustible Gas HIGH Detected in your house. Evacuate!!";
 
-            showNotification("Gas", "Harmful Gases are detected !!  Evacuate immediately ");
+            showNotification("Gas Emergency!", "Harmful Gases are detected !!  Evacuate immediately ");
         }
     }
 
