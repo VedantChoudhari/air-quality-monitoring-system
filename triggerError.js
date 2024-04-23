@@ -26,7 +26,7 @@ function activate_error_box(fire, gas) {
         else if (gas) {
             warning_title.innerHTML = "Gas";
 
-            warning_detail.innerHTML = "Combustible Gas HIGH Detected in your house. Evacuate!!";
+             warning_detail.innerHTML = "Harmful Gases are detected. Evacuate immedately !!";
 
             showNotification("Gas", "Harmful Gases are detected !!  Evacuate immediately ");
         }
