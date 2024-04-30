@@ -1,59 +1,57 @@
-function plot2(bs_feel,bs_temp,bs_hum) {
-  
-
-var trace = {
-  x: bs_feel,
-  y: bs_temp,
-  z: bs_hum,
-  mode: 'markers',
-  marker: {
-    color: 'rgb(23, 190, 207)',
-    size: 12,
-    line: {
-      color: 'rgba(217, 217, 217, 0.14)',
-      width: 0.5
+function plot2(bs_feel, bs_temp, bs_hum) {
+  var trace = {
+    x: bs_feel,
+    y: bs_temp,
+    z: bs_hum,
+    mode: 'markers',
+    marker: {
+      color: 'rgb(23, 190, 207)',
+      size: 12,
+      line: {
+        color: 'rgba(217, 217, 217, 0.14)',
+        width: 0.5
+      },
+      opacity: 0.8
     },
-    opacity: 0.8
-  },
-  type: 'scatter3d'
-};
+    type: 'scatter3d'
+  };
 
-var data = [trace];
-var layout = {
-  // title: '3D Scatter plot of Temperature vs Humidity',
-  autosize: false,
-  width: 800,
-  height: 500,
-  margin: {
-    l: 0,
-    r: 0,
-    b: 0,
-    t: 65
-  },
-  paper_bgcolor: 'rgb(10,10,10)',
-  scene: {
-    xaxis: {
-      color: 'white',
-      title:'Feel temp'
+  var data = [trace];
+  var layout = {
+    // title: '3D Scatter plot of Temperature vs Humidity',
+    autosize: false,
+    width: 800,
+    height: 500,
+    margin: {
+      l: 0,
+      r: 0,
+      b: 0,
+      t: 65
     },
-    yaxis: {
-      color: 'white',
-      title: 'Temp'
+    paper_bgcolor: 'rgb(10,10,10)',
+    scene: {
+      xaxis: {
+        color: 'white',
+        title: 'Feel temp'
+      },
+      yaxis: {
+        color: 'white',
+        title: 'Temp'
+      },
+      zaxis: {
+        color: 'white',
+        title: 'Humidity'
+      }
     },
-    zaxis: {
-      color: 'white',
-      title:'Humidity'
-    }
-  },
-  camera: {
-    up: { x: 10, y: 10, z: 0 },
-    center: { x: 0, y: 0, z: 0 },
-    eye: { x: 5, y: 5, z: 1 }
-  },
+    camera: {
+      up: { x: 10, y: 10, z: 0 },
+      center: { x: 0, y: 0, z: 0 },
+      eye: { x: 5, y: 5, z: 1 }
+    },
 
-};
+  };
 
-Plotly.newPlot('Div', data, layout);
+  Plotly.newPlot('Div', data, layout);
 
 }
 
@@ -67,4 +65,4 @@ var bs_mq135 = [65, 65, 65, 65, 66, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 
 
 var bs_mq4 = [183, 183, 183, 183, 183, 182, 181, 182, 181, 181, 180, 180, 180, 179, 179, 179, 179, 179, 179, 179, 179, 178, 178, 178, 178, 294, 293, 292, 300, 300, 298, 300, 300, 299, 301, 299, 299, 300, 299, 300, 301, 299, 300, 300, 300, 299, 300, 299, 297, 314, 312, 310, 313, 310, 308, 308, 308, 309, 308, 307, 308, 309, 307, 307, 306, 306, 306, 306, 307, 306, 306, 306, 305, 305, 304, 306, 305, 305, 304, 305, 304, 304, 305, 304, 304, 304, 303, 303, 304, 303, 304, 303, 303, 303, 303, 304, 302, 302, 302, 302, 302, 302, 302, 302, 302, 303, 302, 302, 302, 302, 302, 301, 302, 301, 301, 302, 301, 301, 301, 301, 301, 301, 301, 301, 301, 302, 301, 301, 301, 301, 301, 300, 299, 300, 300, 301, 300, 300, 300, 300, 301, 300, 299, 300, 299, 300, 300, 300, 299, 299, 299, 299, 299, 299, 299, 299, 299, 299, 298, 299, 299, 299, 299, 298, 298, 298, 299, 298, 298, 299, 298, 299, 299, 298, 298, 298, 297, 298, 298, 298, 298, 298, 298, 298, 298, 298, 298, 298, 297, 298, 297, 298, 297, 298, 298];
 
-plot2(bs_feel,bs_temp,bs_hum);
+plot2(bs_feel, bs_temp, bs_hum);
