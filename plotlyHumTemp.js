@@ -33,13 +33,16 @@ var layout = {
   paper_bgcolor: 'rgb(10,10,10)',
   scene: {
     xaxis: {
-      color: 'white'
+      color: 'white',
+      title:'Feel temp'
     },
     yaxis: {
-      color: 'white'
+      color: 'white',
+      title: 'Temp'
     },
     zaxis: {
-      color: 'white'
+      color: 'white',
+      title:'Humidity'
     }
   },
   camera: {
