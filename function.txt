@@ -6,3 +6,5 @@ plot5( bs_feel);       //feelslike.js
   plot3(bs_temp);      //temp.js
   updateReadings(35.3, 87, 170);  //qualityReadings.js
   activate_error_box(true, false)
+
+  
