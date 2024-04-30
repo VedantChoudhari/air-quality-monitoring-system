@@ -10,14 +10,14 @@ function activate_error_box(fire, gas) {
         err_box.style.display = 'flex';
 
         if (fire && gas) {
-            warning_title.innerHTML = "Fire and Harmful Gases";
+            warning_title.innerHTML = "Fire and Harmful Gases ";
 
             warning_detail.innerHTML = "Fire and Harmful gases is Detected in your house Evacuate!!";
 
             showNotification("Emergency Alert!", "Elevated levels of harmful gases and fire have been detected in your residence. Please evacuate immediately for your safety!”");
         }
         else if (fire) {
-            warning_title.innerHTML = "Fire";
+            warning_title.innerHTML = "Fire🔥";
 
             warning_detail.innerHTML = "Fire Detected in your house   Evacuate!!";
 

@@ -109,11 +109,11 @@ p {
     align-items: center;
     justify-content: center;
     min-height: 75vh;
-    background-color: white;
+    background-color:#1F3044;
     width: 80%;
     border: solid black 0.1rem;
     border-radius: 2rem;
-    color: red;
+    color:#FB9039;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
