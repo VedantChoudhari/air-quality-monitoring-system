@@ -1,49 +1,48 @@
-function plot6(bs_mq135) {
-    // Data for the chart
-    xValues=[];
-    for (var i = 0; i < bs_mq135.length; i++) {
-      xValues.push(i+1);
+function plot2_air_quality(bs_mq135) {
+  // Data for the chart
+  xValues = [];
+  for (var i = 0; i < bs_mq135.length; i++) {
+    xValues.push(i + 1);
+  }
+
+  // Trace for the chart
+  var trace = {
+    x: xValues,
+    y: bs_mq135,
+    type: 'scatter',
+    mode: 'lines+markers',
+    marker: {
+      color: 'white'
+    },
+    line: {
+      color: 'lightgreen' // Line color
     }
-    
-    // Trace for the chart
-    var trace = {
-      x: xValues,
-      y: bs_mq135,
-      type: 'scatter',
-      mode: 'lines+markers', 
-      marker: {
-        color: 'white' 
-      },
-      line: {
-        color: 'lightgreen' // Line color
-      }
-    };
-    
-    // Data array
-    var data = [trace];
-    
-    var layout = {
-      plot_bgcolor: 'black',    
-      paper_bgcolor: 'black',
-      xaxis: {
-        color: 'white',
-        title:'Time' // X-axis text color
-      },
-      yaxis: {
-        color: 'white', // Y-axis text color
-        title:'Air Quality',
-      }
-      
-    };
-    
-    
-    
-    // Plot the chart
-    Plotly.newPlot('airquality', data, layout);
-    
+  };
+
+  // Data array
+  var data = [trace];
+
+  var layout = {
+    plot_bgcolor: 'black',
+    paper_bgcolor: 'black',
+    xaxis: {
+      color: 'white',
+      title: 'Time' // X-axis text color
+    },
+    yaxis: {
+      color: 'white', // Y-axis text color
+      title: 'Air Quality',
     }
-    var bs_mq135 =[65, 65, 65, 65, 66, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 111, 110, 110, 124, 124, 126, 126, 126, 125, 125, 125, 124, 124, 124, 126, 125, 125, 125, 125, 125, 127, 126, 126, 125, 142, 140, 136, 138, 136, 133, 131, 131, 130, 130, 131, 129, 129, 129, 128, 128, 127, 129, 127, 128, 127, 128, 128, 127, 127, 127, 126, 127, 127, 126, 126, 127, 126, 125, 126, 126, 126, 126, 126, 126, 125, 125, 125, 125, 124, 125, 125, 125, 125, 125, 125, 124, 125, 125, 124, 125, 124, 125, 124, 124, 124, 124, 125, 125, 125, 125, 124, 124, 124, 125, 125, 124, 124, 123, 124, 125, 124, 124, 124, 124, 124, 124, 125, 123, 125, 124, 124, 124, 124, 125, 124, 124, 125, 123, 124, 125, 124, 124, 124, 124, 123, 125, 124, 124, 123, 124, 124, 125, 124, 124, 123, 124, 124, 123, 124, 123, 124, 123, 125, 123, 124, 123, 123, 124, 124, 124, 123, 123, 124, 123, 124, 124, 124, 123, 124, 124, 123, 124, 124, 123, 124, 123, 124, 123, 124, 124];
-   
-    plot6( bs_mq135);
-    
-    
+
+  };
+
+
+
+  // Plot the chart
+  Plotly.newPlot('airquality', data, layout);
+
+}
+
+
+// plot2_air_quality(bs_mq135);
+

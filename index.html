@@ -64,20 +64,33 @@
 
   <!-- Main renderer -->
   <script src="./qualityReadings.js"></script>
-  
+
   <!-- 2D plots -->
   <script src="./plot_humidity.js"> </script>
   <script src="./plot_feelslike.js"> </script>
   <script src="./plot_air_quality.js"> </script>
   <script src="./plot_temperature.js"></script>
-  
+
+  <!-- initially plotting things: -->
+  <script type="module">
+    // import { bs_temp, bs_hum, bs_feel, bs_mq135, bs_mq4 } from "./initial_readings.js";
+    import { bs_obj } from "./initial_readings.js";
+    plot2_temperature(bs_obj.bs_temp);
+    plot2_humidity(bs_obj.bs_hum);
+    plot2_air_quality(bs_obj.bs_mq135);
+    plot2_feels_like(bs_obj.bs_feel);
+    plot3_aq_hum(bs_obj.bs_feel, bs_obj.bs_hum, bs_obj.bs_mq135);
+    plot3_hum_temp(bs_obj.bs_feel, bs_obj.bs_temp, bs_obj.bs_hum);
+  </script>
+
+
   <!-- 3D plots -->
   <script src="./plotly_AQHum.js"> </script>
   <script src="./plotly_HumTemp.js"></script>
 
   <!-- SOS -->
   <script src="./triggerError.js"></script>
-  
+
 </body>
 
 </html>
