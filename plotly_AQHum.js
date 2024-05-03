@@ -20,16 +20,17 @@ function plot1(bs_feel, bs_hum, bs_mq135) {
   var data = [trace];
   var layout = {
     // title: '3D Scatter plot of Temperature vs Humidity',
-    autosize: false,
-    width: 800,
-    height: 500,
+    // autosize: false,
+    // width: 800,
+    // height: 500,
     margin: {
       l: 0,
       r: 0,
       b: 0,
       t: 65
     },
-    paper_bgcolor: 'rgb(10,10,10)',
+    // paper_bgcolor: 'rgb(10,10,10)',
+    paper_bgcolor: 'black',
     scene: {
       xaxis: {
         color: 'white',

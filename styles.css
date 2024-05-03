@@ -40,11 +40,10 @@ body {
     align-items: center;
     padding: 4rem;
     background-color: #4d4d4d;
-    /* Dark theme item background */
     border-radius: 20px;
     box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);
-    /* Shadow for dark theme */
     transition: transform 0.3s ease;
+    min-width: 22rem;
 }
 
 .item:hover {
@@ -92,7 +91,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
 }
 
 p {
@@ -109,11 +107,11 @@ p {
     align-items: center;
     justify-content: center;
     min-height: 75vh;
-    background-color:#1F3044;
+    background-color: #1F3044;
     width: 80%;
     border: solid black 0.1rem;
     border-radius: 2rem;
-    color:#FB9039;
+    color: #FB9039;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -123,6 +121,60 @@ p {
     z-index: 999;
 }
 
-#gap{
+#gap {
     height: 4rem;
+}
+
+.plotly {
+    align-items: center;
+    margin-left: 0;
+}
+
+.plot2d {
+    /* width:1000px; */
+    /* height: 500px; */
+    width: 75%;
+    text-align: left;
+    /* min-width: 500px; */
+    /* height: auto; */
+    min-height: 40rem;
+    /* margin-left: 4rem; */
+}
+
+.plot3d {
+    /* width: 800px;
+    height: 500px; */
+    width: 75%;
+    /* min-width: 500px; */
+    min-height: 50rem;
+    /* margin-left: 4rem; */
+    background-color: black;
+}
+
+
+/* Media query for phones */
+@media only screen and (max-width: 600px) {
+    .plot2d {
+        width: 100%;
+        /* Full width on phones */
+        min-width: unset;
+        /* Remove minimum width */
+        min-height: 25rem;
+        /* Adjust minimum height for smaller screens */
+    }
+    
+    .plot3d {
+        width: 100%;
+        min-width: unset;
+        min-height: 25rem;
+        background-color: black;
+    }
+}
+
+/* Media query for laptops and larger screens */
+@media only screen and (min-width: 601px) {
+    .plot2d {
+        width: 75%;
+        /* Adjust width for laptops */
+    }
 }

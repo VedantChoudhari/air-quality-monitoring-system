@@ -32,7 +32,9 @@ function plot3(bs_temp) {
     yaxis: {
       color: 'white', // Y-axis text color
       title: 'Temperature',
-    }
+    },
+
+    // aspectratio: { ratio: 1 }
 
   };
 
