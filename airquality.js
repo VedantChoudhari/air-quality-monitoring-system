@@ -31,7 +31,7 @@ function plot6(bs_mq135) {
       },
       yaxis: {
         color: 'white', // Y-axis text color
-        title:'Temperature',
+        title:'Air Quality',
       }
       
     };
