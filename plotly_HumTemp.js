@@ -1,9 +1,11 @@
-function plot3_hum_temp(bs_feel, bs_temp, bs_hum) {
+function plot3_hum_temp(bs_temp, bs_hum, bs_feel) {
   var trace = {
-    x: bs_feel,
-    y: bs_temp,
-    z: bs_hum,
+    x: bs_temp,
+    y: bs_hum,
+    z: bs_feel,
+
     mode: 'markers',
+
     marker: {
       color: 'rgb(23, 190, 207)',
       size: 12,
@@ -17,6 +19,7 @@ function plot3_hum_temp(bs_feel, bs_temp, bs_hum) {
   };
 
   var data = [trace];
+
   var layout = {
     // title: '3D Scatter plot of Temperature vs Humidity',
     // autosize: false,
@@ -26,34 +29,36 @@ function plot3_hum_temp(bs_feel, bs_temp, bs_hum) {
       l: 0,
       r: 0,
       b: 0,
-      t: 65
+      t: 0
     },
+
     // paper_bgcolor: 'rgb(10,10,10)',
     paper_bgcolor: 'black',
+
     scene: {
       xaxis: {
         color: 'white',
-        title: 'Feel temp'
+        title: 'Temperature'
       },
       yaxis: {
         color: 'white',
-        title: 'Temp'
+        title: 'Humidity'
       },
       zaxis: {
         color: 'white',
-        title: 'Humidity'
+        title: 'Temperature Feels like'
       }
     },
-    camera: {
-      up: { x: 10, y: 10, z: 0 },
-      center: { x: 0, y: 0, z: 0 },
-      eye: { x: 5, y: 5, z: 1 }
-    },
 
+    // IDK why camera is not working?
+    // camera: {
+    //   center: { x: 50, y: 0, z: 0 },
+    //   eye: { x: 100, y: 105, z: 125 },
+    //   up: { x: 1, y: 0, z: 0 }
+    // },
   };
 
   Plotly.newPlot('Div', data, layout);
-
 }
 
 
