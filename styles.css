@@ -158,10 +158,12 @@ p {
 
 #copyrights {
     color: chartreuse;
+    font-size: 1.25rem;
 }
 
 #last_updated {
     color: #FB9039;
+    font-size: 1.25rem;
     text-align: right;
 }
 
@@ -205,6 +207,14 @@ p {
         min-width: unset;
         min-height: 25rem;
         background-color: black;
+    }
+
+    #copyrights {
+        font-size: 0.75rem;
+    }
+    
+    #last_updated {
+        font-size: 0.75rem;
     }
 }
 
