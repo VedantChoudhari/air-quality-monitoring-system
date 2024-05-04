@@ -43,6 +43,42 @@ function activate_error_box(fire, gas) {
 }
 
 // <!-- Notification script: -->
+// Request permission to show notifications when the page is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    if ("Notification" in window) {
+        Notification.requestPermission().then(function (permission) {
+            if (permission !== "granted") {
+                console.log("Permission to show notifications denied");
+            }
+        });
+    } else {
+        console.log("Notifications not supported");
+    }
+});
+
+// Function to show a notification
+function showNotification(title, message) {
+    // Check if notifications are supported by the browser
+    if (!("Notification" in window)) {
+        console.log("Notifications not supported");
+        return false;
+    }
+
+    // Check if permission to show notifications is granted
+    if (Notification.permission !== "granted") {
+        console.log("Permission to show notifications denied");
+        return false;
+    }
+
+    // Show the notification
+    new Notification(title, {
+        body: message
+    });
+    return true;
+}
+
+
+/*
 
 function showNotification(title, message) {
     // Check if notifications are supported by the browser
@@ -73,5 +109,6 @@ function showNotification(title, message) {
         return true;
     }
 }
+*/
 
 // showNotification("Fire Detected", "Fire Detected in your house. Evacuate!!");

@@ -167,15 +167,25 @@
     login();
     // get_firebase_node();
     // every 10 sec:
-    interval_id = setInterval(get_firebase_node, 10000);
-    </script>
+    var stamp = document.getElementById("last_updated");
+    stamp.style.color = '#FB9039';
 
-    <script>
-      function stop_fetching_data() {
-        clearInterval(interval_id);
-        document.getElementById("last_updated").style.color = 'grey';
-      }
-    </script>
+    interval_id = setInterval(get_firebase_node, 10000);
+  </script>
+
+  <script>
+    var stamp = document.getElementById("last_updated");
+    // const stamp = document.getElementById("last_updated");
+
+    function stop_fetching_data() {
+      clearInterval(interval_id);
+      console.log('Stopped fetching data.')
+      stamp.style.color = 'grey';
+      return true;
+    }
+
+    stamp.addEventListener('click', stop_fetching_data);
+  </script>
 </body>
 
 </html>
