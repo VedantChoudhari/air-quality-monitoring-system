@@ -40,6 +40,13 @@ body {
 
 #page_title {
     font-size: 3rem;
+    margin-top: 4rem;
+    margin-bottom: 6rem;
+}
+
+#aligner {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
 }
 
 .data {
@@ -149,8 +156,9 @@ p {
 /* Media query for phones */
 @media only screen and (max-width: 1150px) {
     .data {
-        flex-direction: column;
         align-items: center;
+        display: grid;
+        grid-template-columns: repeat(1, minmax(100%, 1fr));
     }
 
     .item {
@@ -162,7 +170,6 @@ p {
         width: 80%;
         min-width: unset;
         min-height: 25rem;
-        /* Adjust minimum height for smaller screens */
     }
 
     .plot3d {
@@ -172,9 +179,20 @@ p {
         background-color: black;
     }
 
-    .data {
-        display: grid;
-        grid-template-columns: repeat(1, minmax(100%, 1fr));
+}
+
+@media only screen and (max-width: 800px) {
+    .plot2d {
+        width: 100%;
+        min-width: unset;
+        min-height: 20rem;
+    }
+
+    .plot3d {
+        width: 100%;
+        min-width: unset;
+        min-height: 25rem;
+        background-color: black;
     }
 }
 

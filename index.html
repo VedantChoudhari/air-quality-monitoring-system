@@ -19,29 +19,29 @@
       <div class='grid_container'>
         <h1 id="page_title">Environment Monitoring</h1>
 
-        <!-- <div class="page light"> -->
-          <div class="data">
+        <div class="data">
 
-            <div class="item temperature">
-              <h2>Temperature</h2>
-              <p class="big-font" id="dash_temp">50 °C</p>
-            </div>
-
-            <div class="item air-quality">
-              <h2>Air Quality</h2>
-
-              <!-- <div class="air-quality-slider></div> -->
-              <!-- <p class=" big-font">${airQuality} ppm</p> -->
-              <p class="big-font" id="dash_aq">500</p>
-            </div>
-
-            <div class="item humidity">
-              <h2>Humidity</h2>
-              <p class="big-font" id="dash_hum">50 %</p>
-            </div>
-
+          <div class="item temperature">
+            <h2>Temperature</h2>
+            <p class="big-font" id="dash_temp">50 °C</p>
           </div>
-        <!-- </div> -->
+
+          <div class="item air-quality">
+            <h2>Air Quality</h2>
+
+            <!-- <div class="air-quality-slider></div> -->
+            <!-- <p class=" big-font">${airQuality} ppm</p> -->
+            <p class="big-font" id="dash_aq">500</p>
+          </div>
+
+          <div class="item humidity">
+            <h2>Humidity</h2>
+            <p class="big-font" id="dash_hum">50 %</p>
+          </div>
+
+        </div>
+
+        <div id="aligner"></div>
       </div>
     </div>
 
@@ -107,6 +107,9 @@
   <script src="./triggerError.js"></script>
 
 
+  <script>
+    var global;
+  </script>
 
   <!-- initially plotting things: -->
   <script type="module">
@@ -118,6 +121,14 @@
     plot2_feels_like(bs_obj.bs_feel);
     plot3_hum_temp(bs_obj.bs_temp, bs_obj.bs_hum, bs_obj.bs_feel);
     plot3_aq_hum(bs_obj.bs_feel, bs_obj.bs_hum, bs_obj.bs_mq135);
+
+    updateReadings(
+      bs_obj.bs_temp[bs_obj.bs_temp.length - 1],
+      bs_obj.bs_hum[bs_obj.bs_hum.length - 1],
+      bs_obj.bs_mq135[bs_obj.bs_mq135.length - 1],
+    );
+    
+    global = bs_obj;
   </script>
 
 </body>
