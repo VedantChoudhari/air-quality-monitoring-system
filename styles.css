@@ -152,6 +152,18 @@ p {
     background-color: black;
 }
 
+#bottom {
+    width: 100%;
+}
+
+#copyrights {
+    color: chartreuse;
+}
+
+#last_updated {
+    color: #FB9039;
+    text-align: right;
+}
 
 /* Media query for phones */
 @media only screen and (max-width: 1150px) {

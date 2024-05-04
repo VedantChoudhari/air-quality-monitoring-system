@@ -89,6 +89,11 @@
     <button type="button" onclick="activate_error_box(false, false)">Close</button>
   </div>
 
+  <div id="bottom">
+    <p id="last_updated"></p>
+    <hr>
+    <p id="copyrights">&COPY; Bhushan Songire, Basil Skaria (May 2024)</p>
+  </div>
 
   <!-- Main renderer -->
   <script src="./qualityReadings.js"></script>
@@ -113,7 +118,6 @@
 
   <!-- initially plotting things: -->
   <script type="module">
-    // import { bs_temp, bs_hum, bs_feel, bs_mq135, bs_mq4 } from "./initial_readings.js";
     import { bs_obj } from "./initial_readings.js";
     plot2_temperature(bs_obj.bs_temp);
     plot2_humidity(bs_obj.bs_hum);
@@ -127,7 +131,7 @@
       bs_obj.bs_hum[bs_obj.bs_hum.length - 1],
       bs_obj.bs_mq135[bs_obj.bs_mq135.length - 1],
     );
-    
+
     global = bs_obj;
   </script>
 
