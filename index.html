@@ -15,7 +15,35 @@
 <body>
   <div id="main">
 
-    <div id="app"> </div>
+    <div id="app">
+      <div class='grid_container'>
+        <h1 id="page_title">Environment Monitoring</h1>
+
+        <!-- <div class="page light"> -->
+          <div class="data">
+
+            <div class="item temperature">
+              <h2>Temperature</h2>
+              <p class="big-font" id="dash_temp">50 °C</p>
+            </div>
+
+            <div class="item air-quality">
+              <h2>Air Quality</h2>
+
+              <!-- <div class="air-quality-slider></div> -->
+              <!-- <p class=" big-font">${airQuality} ppm</p> -->
+              <p class="big-font" id="dash_aq">500</p>
+            </div>
+
+            <div class="item humidity">
+              <h2>Humidity</h2>
+              <p class="big-font" id="dash_hum">50 %</p>
+            </div>
+
+          </div>
+        <!-- </div> -->
+      </div>
+    </div>
 
     <!-- <div id="delete_later">
       <button onclick="activate_error_box(true, false)">Fire</button>
@@ -93,4 +121,5 @@
   </script>
 
 </body>
+
 </html>
