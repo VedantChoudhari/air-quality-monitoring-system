@@ -38,7 +38,7 @@ function plot3_aq_hum(bs_feel, bs_hum, bs_mq135) {
     scene: {
       xaxis: {
         color: 'white',
-        title: 'feel temp'
+        title: 'Temperature Feel'
       },
       yaxis: {
         color: 'white',
@@ -46,7 +46,7 @@ function plot3_aq_hum(bs_feel, bs_hum, bs_mq135) {
       },
       zaxis: {
         color: 'white',
-        title: 'air quality'
+        title: 'Air Quality'
       }
     },
 
