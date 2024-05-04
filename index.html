@@ -114,6 +114,8 @@
 
   <script>
     var bs_obj_global;
+    var web_loop = true;
+    var interval_id;
   </script>
 
   <!-- initially plotting things: -->
@@ -136,7 +138,44 @@
   </script>
 
   <!-- Getting real data and plotting that: -->
-  <script type="module" src="./fb_get_creds.js"></script>
+  <script type="module">
+    import { login, get_data, var_random } from './fb_main.js';
+    console.log("Imported test_variable: ", var_random);
+
+    async function get_firebase_node() {
+      // console.log("Reached the function required!!!");
+      var bs_obj = await get_data();
+
+      activate_error_box(bs_obj.bs_fire, bs_obj.bs_gas);
+
+      plot2_temperature(bs_obj.bs_temp);
+      plot2_humidity(bs_obj.bs_hum);
+      plot2_air_quality(bs_obj.bs_mq135);
+      plot2_feels_like(bs_obj.bs_feel);
+      plot3_hum_temp(bs_obj.bs_temp, bs_obj.bs_hum, bs_obj.bs_feel);
+      plot3_aq_hum(bs_obj.bs_feel, bs_obj.bs_hum, bs_obj.bs_mq135);
+
+      updateReadings(
+        bs_obj.bs_temp[bs_obj.bs_temp.length - 1],
+        bs_obj.bs_hum[bs_obj.bs_hum.length - 1],
+        bs_obj.bs_mq135[bs_obj.bs_mq135.length - 1],
+      );
+
+      bs_obj_global = bs_obj;
+    }
+
+    login();
+    // get_firebase_node();
+    // every 10 sec:
+    interval_id = setInterval(get_firebase_node, 10000);
+    </script>
+
+    <script>
+      function stop_fetching_data() {
+        clearInterval(interval_id);
+        document.getElementById("last_updated").style.color = 'grey';
+      }
+    </script>
 </body>
 
 </html>
