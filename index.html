@@ -146,20 +146,20 @@
       // console.log("Reached the function required!!!");
       var bs_obj = await get_data();
 
-      activate_error_box(bs_obj.bs_fire, bs_obj.bs_gas);
-
       plot2_temperature(bs_obj.bs_temp);
       plot2_humidity(bs_obj.bs_hum);
       plot2_air_quality(bs_obj.bs_mq135);
       plot2_feels_like(bs_obj.bs_feel);
       plot3_hum_temp(bs_obj.bs_temp, bs_obj.bs_hum, bs_obj.bs_feel);
       plot3_aq_hum(bs_obj.bs_feel, bs_obj.bs_hum, bs_obj.bs_mq135);
-
+      
       updateReadings(
         bs_obj.bs_temp[bs_obj.bs_temp.length - 1],
         bs_obj.bs_hum[bs_obj.bs_hum.length - 1],
         bs_obj.bs_mq135[bs_obj.bs_mq135.length - 1],
       );
+
+      activate_error_box(bs_obj.bs_fire, bs_obj.bs_gas);
 
       bs_obj_global = bs_obj;
     }
