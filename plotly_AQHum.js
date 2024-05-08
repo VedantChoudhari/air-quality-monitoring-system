@@ -19,7 +19,7 @@ function plot3_aq_hum(bs_feel, bs_hum, bs_mq135) {
   };
 
   var data = [trace];
-  
+
   var layout = {
     // title: '3D Scatter plot of Temperature vs Humidity',
     // autosize: false,
