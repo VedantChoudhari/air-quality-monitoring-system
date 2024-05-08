@@ -28,14 +28,11 @@ const db = getDatabase();
 //--------------------------------------------------------------------------------
 var usr_uid, usr_token_id;
 
-const fid = window.prompt("Enter firebase Id: ");
-const fpw = window.prompt("Enter firebase Pass: ");
-
-function login() {
+function login(user_id, user_pass) {
     let t = new Date();
     console.log("fn login() called @ " + t);
 
-    signInWithEmailAndPassword(auth, fid, fpw)
+    signInWithEmailAndPassword(auth, user_id, user_pass)
         .then((response) => {
             // console.log(response);
             usr_uid = response.user.uid;

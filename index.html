@@ -78,6 +78,21 @@
       <div id="gap"></div>
 
     </div>
+
+    <div id="bottom">
+      <p id="last_updated" title="Click to stop fetching data."></p>
+      <hr>
+
+      <p id="copyrights">
+        &COPY;
+        <span id="prof_basil"> Basil Skaria</span>,
+        <span id="prof_bhushan"> Bhushan Songire &#128279;</span>,
+        <span id="prof_ujjawal"> Ujjawal Kumar</span>,
+        <span id="prof_vedant"> Vedant Choudhari,</span>
+        <span id="copy_time"> (May 2024) </span>
+      </p>
+    </div>
+
   </div>
 
   <div id="errBox">
@@ -87,12 +102,6 @@
     <h2 id="pol">Police Number: 112</h2>
     <h2 id="amb">Ambulance Number: 108</h2>
     <button type="button" onclick="activate_error_box(false, false)">Close</button>
-  </div>
-
-  <div id="bottom">
-    <p id="last_updated"></p>
-    <hr>
-    <p id="copyrights">&COPY; Bhushan Songire, Basil Skaria (May 2024)</p>
   </div>
 
   <!-- Main renderer -->
@@ -109,18 +118,39 @@
   <script src="./plotly_HumTemp.js"></script>
 
   <!-- SOS -->
-  <script src="./triggerError.js"></script>
+  <script src="./trigger_error.js"></script>
 
 
   <script>
     var bs_obj_global;
-    var web_loop = true;
-    var interval_id;
+    var data_fetch_status = true;
+    var get_firebase_node;
+  </script>
+
+  <!-- base script -->
+  <script>
+    const prof_bs = document.getElementById('prof_bhushan');
+
+    prof_bs.style.cursor = 'pointer';
+    prof_bs.title = "Click to visit my profile";
+
+    prof_bs.addEventListener('click', () => {
+      window.open('https://www.linkedin.com/in/bhushan-songire', '_blank');
+    })
+
   </script>
 
   <!-- initially plotting things: -->
   <script type="module">
     import { bs_obj } from "./initial_readings.js";
+
+    // Update the readings in dashboard boxes:
+    updateReadings(
+      bs_obj.bs_temp[bs_obj.bs_temp.length - 1],
+      bs_obj.bs_hum[bs_obj.bs_hum.length - 1],
+      bs_obj.bs_mq135[bs_obj.bs_mq135.length - 1],
+    );
+
     plot2_temperature(bs_obj.bs_temp);
     plot2_humidity(bs_obj.bs_hum);
     plot2_air_quality(bs_obj.bs_mq135);
@@ -128,16 +158,10 @@
     plot3_hum_temp(bs_obj.bs_temp, bs_obj.bs_hum, bs_obj.bs_feel);
     plot3_aq_hum(bs_obj.bs_feel, bs_obj.bs_hum, bs_obj.bs_mq135);
 
-    updateReadings(
-      bs_obj.bs_temp[bs_obj.bs_temp.length - 1],
-      bs_obj.bs_hum[bs_obj.bs_hum.length - 1],
-      bs_obj.bs_mq135[bs_obj.bs_mq135.length - 1],
-    );
-
     bs_obj_global = bs_obj;
   </script>
 
-  <!-- Getting real data and plotting that: -->
+  <!-- Getting real time data and plotting that: -->
   <script type="module">
     import { login, get_data, var_random } from './fb_main.js';
     console.log("Imported test_variable: ", var_random);
@@ -145,6 +169,7 @@
     async function get_firebase_node() {
       // console.log("Reached the function required!!!");
       var bs_obj = await get_data();
+      bs_obj_global = bs_obj;
 
       plot2_temperature(bs_obj.bs_temp);
       plot2_humidity(bs_obj.bs_hum);
@@ -152,7 +177,7 @@
       plot2_feels_like(bs_obj.bs_feel);
       plot3_hum_temp(bs_obj.bs_temp, bs_obj.bs_hum, bs_obj.bs_feel);
       plot3_aq_hum(bs_obj.bs_feel, bs_obj.bs_hum, bs_obj.bs_mq135);
-      
+
       updateReadings(
         bs_obj.bs_temp[bs_obj.bs_temp.length - 1],
         bs_obj.bs_hum[bs_obj.bs_hum.length - 1],
@@ -160,32 +185,38 @@
       );
 
       activate_error_box(bs_obj.bs_fire, bs_obj.bs_gas);
-
-      bs_obj_global = bs_obj;
     }
 
-    login();
-    // get_firebase_node();
-    // every 10 sec:
+    const fid = window.prompt("Enter firebase Id: ");
+    const fpw = window.prompt("Enter firebase Pass: ");
+    login(fid, fpw);
+
+
+    // Part to handle the update on screen and toggle the data fetch..
     var stamp = document.getElementById("last_updated");
-    stamp.style.color = '#FB9039';
+    const fetch_interval = 10 * 1000;
+    // 10 sec
 
-    interval_id = setInterval(get_firebase_node, 10000);
-  </script>
-
-  <script>
-    var stamp = document.getElementById("last_updated");
-    // const stamp = document.getElementById("last_updated");
-
-    function stop_fetching_data() {
-      clearInterval(interval_id);
-      console.log('Stopped fetching data.')
-      stamp.style.color = 'grey';
-      return true;
+    function toggleFetchingData() {
+      if (data_fetch_status) {
+        clearInterval(interval_id);
+        console.log('Stopped fetching data.')
+        stamp.style.color = 'grey';
+        stamp.title = "Not fetching the live data from server!"
+      } else {
+        interval_id = setInterval(get_firebase_node, fetch_interval);
+        console.log('Resumed fetching data.')
+        stamp.style.color = '#FB9039';
+        stamp.title = "Fetching the live data from server!"
+      }
+      data_fetch_status = !data_fetch_status; // Toggle data_fetch_status
     }
 
-    stamp.addEventListener('click', stop_fetching_data);
+    // Initialize data fetching
+    var interval_id = setInterval(get_firebase_node, fetch_interval);
+    stamp.addEventListener('click', toggleFetchingData);
   </script>
+
 </body>
 
 </html>

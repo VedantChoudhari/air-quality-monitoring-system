@@ -44,7 +44,7 @@ function activate_error_box(fire, gas) {
 
 // <!-- Notification script: -->
 // Request permission to show notifications when the page is loaded
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     if ("Notification" in window) {
         Notification.requestPermission().then(function (permission) {
             if (permission !== "granted") {
