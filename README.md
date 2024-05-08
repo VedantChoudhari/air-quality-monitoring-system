@@ -1,4 +1,4 @@
-# `Air Quality` Monitoring (`HVAC` monitoring) Web App
+# `Air Quality` (`HVAC`) Monitoring Web App
 
 <!-- <hr> -->
 
