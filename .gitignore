@@ -4,3 +4,7 @@ function.txt
 git commands.txt
 bs_*
 *.bat
+node_modules/
+package*
+.env
+bs_test.js
