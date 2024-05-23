@@ -1,13 +1,16 @@
 console.log("FBjs: Firebase JS file started successfully!!!");
 
 //--------------------------------------------------------------------------------
+import { f_config, data1, data2 } from './fb_env.js';
 
-var firebaseConfig = window.prompt("Paste credentials: ");
-console.log(typeof (firebaseConfig));
+var firebaseConfig = f_config;
 
 const firebaseConfigSpecific = JSON.parse(firebaseConfig);
-console.log("Firebase Config Extracted:");
-// console.log(firebaseConfig);
+
+console.log("Firebase Config Extracted: ");
+console.log("firebaseConfig: ", firebaseConfig);
+console.log("TYPE: ", typeof (firebaseConfig));
+console.log("firebaseConfigSpecific: ", firebaseConfigSpecific);
 // console.log(typeof (fireConfig));
 
 
@@ -28,11 +31,11 @@ const db = getDatabase();
 //--------------------------------------------------------------------------------
 var usr_uid, usr_token_id;
 
-function login(user_id, user_pass) {
+function login(time_pass) {
     let t = new Date();
     console.log("fn login() called @ " + t);
 
-    signInWithEmailAndPassword(auth, user_id, user_pass)
+    signInWithEmailAndPassword(auth, data2, data1)
         .then((response) => {
             // console.log(response);
             usr_uid = response.user.uid;

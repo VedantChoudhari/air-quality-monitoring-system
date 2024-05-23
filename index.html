@@ -164,6 +164,7 @@
   <!-- Getting real time data and plotting that: -->
   <script type="module">
     import { login, get_data, var_random } from './fb_main.js';
+
     console.log("Imported test_variable: ", var_random);
 
     async function get_firebase_node() {
@@ -187,10 +188,7 @@
       activate_error_box(bs_obj.bs_fire, bs_obj.bs_gas);
     }
 
-    const fid = window.prompt("Enter firebase Id: ");
-    const fpw = window.prompt("Enter firebase Pass: ");
-    login(fid, fpw);
-
+    login(123);
 
     // Part to handle the update on screen and toggle the data fetch..
     var stamp = document.getElementById("last_updated");
