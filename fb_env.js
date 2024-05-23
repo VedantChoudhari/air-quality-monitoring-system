@@ -1,5 +1,5 @@
-const { config } = require("dotenv");
-config();
+// const { config } = require("dotenv");
+// config();
 
 const f_config = {
     "apiKey": process.env.REACT_APP_api_key,
