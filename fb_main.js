@@ -47,7 +47,7 @@ import { f_config, initFirebase, data1, data2 } from './fb_get.js';
 // Import Firebase modules
 const { initializeApp } = await import('https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js');
 
-const { getDatabase, ref, child } = await import('https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js');
+const { getDatabase, ref, child, get } = await import('https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js');
 
 const { getAuth, signInWithEmailAndPassword } = await import('https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js');
 
