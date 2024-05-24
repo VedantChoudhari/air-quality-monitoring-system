@@ -42,7 +42,8 @@ function plot2_feels_like(bs_feel) {
     paper_bgcolor: 'black',
     xaxis: {
       color: 'white',
-      title: 'Time' // X-axis text color
+      title: 'Time',
+      tickvals: ["0:00", "4:00", "8:00", "12:00", "16:00", "20:00", "24:00"]
     },
     yaxis: {
       color: 'white', // Y-axis text color
