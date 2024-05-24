@@ -1,6 +1,6 @@
 function plot2_air_quality(bs_mq135) {
   // Data for the chart
-  const len = bs_hum.length;
+  const len = bs_mq135.length;
   const div = Math.floor(len / 24);
   let j = 0;
   let num = 0;

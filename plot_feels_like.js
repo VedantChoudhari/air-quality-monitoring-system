@@ -1,6 +1,6 @@
 function plot2_feels_like(bs_feel) {
   // Data for the chart
-  const len = bs_hum.length;
+  const len = bs_feel.length;
   const div = Math.floor(len / 24);
   let j = 0;
   let num = 0;
