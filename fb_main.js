@@ -19,22 +19,12 @@ getConfig().then(config => {
     const data1 = config.var1;
     const data2 = config.var2;
 
-    console.log(f_config, data1, data2);
+    const firebaseConfigSpecific = f_config;
+    console.log("Firebase Config Extracted: ");
 
-    // Initialize Firebase with the config
-    firebase.initializeApp(f_config);
-
-    // Additional code to use data1 and data2
 }).catch(error => {
     console.error('Error fetching configuration:', error);
 });
-
-
-firebaseConfigSpecific = f_config;
-console.log("Firebase Config Extracted: ");
-console.log("firebaseConfigSpecific: ", firebaseConfigSpecific);
-console.log("TYPE: ", typeof (firebaseConfigSpecific));
-// console.log(typeof (fireConfig));
 
 
 //--------------------------------------------------------------------------------
