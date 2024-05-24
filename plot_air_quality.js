@@ -12,7 +12,8 @@ function plot2_air_quality(bs_mq135) {
     type: 'scatter',
     mode: 'lines+markers',
     marker: {
-      color: 'white'
+      color: 'white',
+      size: 3
     },
     line: {
       color: 'lightgreen' // Line color

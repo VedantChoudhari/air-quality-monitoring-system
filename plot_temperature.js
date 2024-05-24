@@ -12,7 +12,8 @@ function plot2_temperature(bs_temp) {
     type: 'scatter',
     mode: 'lines+markers',
     marker: {
-      color: 'white'
+      color: 'white',
+      size: 3
     },
     line: {
       color: 'lightgreen' // Line color

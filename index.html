@@ -199,8 +199,8 @@
 
     // Part to handle the update on screen and toggle the data fetch..
     var stamp = document.getElementById("last_updated");
-    const fetch_interval = 10 * 1000;
-    // 10 sec
+    const fetch_interval = 15 * 1000;
+    // 15 sec
 
     function toggleFetchingData() {
       if (data_fetch_status) {
@@ -223,9 +223,10 @@
 
     const ideal_mode_btn = document.getElementById('ideal_mode');
     ideal_mode_btn.addEventListener('click', () => {
-      get_firebase_node(ideal_mode = true)
+      console.log("Loading 24 hour data...");
+      get_firebase_node(ideal_mode = true);
       stamp.style.color = 'grey';
-      ideal_mode_btn.style.color = 'grey';
+      toggleFetchingData();
     });
     // if it is called like this below, it will always be called instead of onClick event
     // because we need to pass the pointer_of_fn and not fn call()

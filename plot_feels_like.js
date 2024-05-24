@@ -12,7 +12,8 @@ function plot2_feels_like(bs_feel) {
     type: 'scatter',
     mode: 'lines+markers',
     marker: {
-      color: 'white'
+      color: 'white',
+      size: 3
     },
     line: {
       color: 'lightgreen' // Line color
