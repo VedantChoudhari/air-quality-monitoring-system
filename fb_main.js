@@ -49,7 +49,7 @@ const { initializeApp } = await import('https://www.gstatic.com/firebasejs/10.8.
 
 const { getDatabase } = await import('https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js');
 
-const { getAuth } = await import('https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js');
+const { getAuth, signInWithEmailAndPassword } = await import('https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js');
 
 // wait to fetch config:
 await initFirebase();
