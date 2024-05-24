@@ -54,9 +54,9 @@ const { getAuth } = await import('https://www.gstatic.com/firebasejs/10.8.1/fire
 // wait to fetch config:
 await initFirebase();
 // Initialize Firebase with the fetched config
-app = initializeApp(f_config);
-auth = getAuth(app);
-db = getDatabase(app);
+const app = initializeApp(f_config);
+const auth = getAuth(app);
+const db = getDatabase(app);
 console.log("Firebase initialized successfully");
 
 //--------------------------------------------------------------------------------

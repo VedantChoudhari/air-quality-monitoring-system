@@ -29,7 +29,7 @@ export const initFirebase = async () => {
             databaseURL: config.databaseURL,
         };
 
-        console.log("Firebase Config Extracted: ", f_config);
+        // console.log("Firebase Config Extracted: ", f_config);
 
     } catch (error) {
         console.error('Error initializing Firebase:', error);
