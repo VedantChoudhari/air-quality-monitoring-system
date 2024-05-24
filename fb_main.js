@@ -186,7 +186,7 @@ async function get_data(ideal_mode = false) {
             return result;
         })
         .catch((error) => {
-            alert("Error: " + error);
+            alert("Error in extracting data: " + error);
         })
 }
 
