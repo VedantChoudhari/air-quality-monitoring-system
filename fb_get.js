@@ -1,9 +1,8 @@
-// this will run on the client side:
-
-console.log("FBjs: Firebase JS file started successfully!!!");
+// public/fb_get.js
+console.log("FBget: Firebase dependency file loaded!!!");
 
 // Function to fetch configuration from the serverless function
-export const getConfig = async () => {
+const getConfig = async () => {
     const response = await fetch('/api/config');
     if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -13,7 +12,7 @@ export const getConfig = async () => {
 };
 
 // Function to initialize Firebase and export Firebase services
-export let f_config;
+let f_config;
 
 export const initFirebase = async () => {
     try {
@@ -36,3 +35,6 @@ export const initFirebase = async () => {
         console.error('Error initializing Firebase:', error);
     }
 };
+
+// Export the configuration object
+export { f_config };
