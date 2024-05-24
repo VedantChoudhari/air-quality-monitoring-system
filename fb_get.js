@@ -12,7 +12,7 @@ const getConfig = async () => {
 };
 
 // Function to initialize Firebase and export Firebase services
-let f_config;
+let f_config, data1, data2;
 
 export const initFirebase = async () => {
     try {
@@ -29,6 +29,9 @@ export const initFirebase = async () => {
             databaseURL: config.databaseURL,
         };
 
+        data1 = config.var1;
+        data2 = config.var2;
+
         // console.log("Firebase Config Extracted: ", f_config);
 
     } catch (error) {
@@ -37,4 +40,4 @@ export const initFirebase = async () => {
 };
 
 // Export the configuration object
-export { f_config };
+export { f_config, data1, data2 };

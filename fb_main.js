@@ -42,7 +42,7 @@ console.log("FBjs: Firebase JS file started successfully!!!");
 // });
 
 // get config from .env
-import { f_config, initFirebase } from './fb_get.js';
+import { f_config, initFirebase, data1, data2 } from './fb_get.js';
 
 // Import Firebase modules
 const { initializeApp } = await import('https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js');
@@ -59,14 +59,6 @@ const app = initializeApp(f_config);
 const auth = getAuth(app);
 const db = getDatabase(app);
 console.log("Firebase initialized successfully");
-
-
-if (auth) {
-    console.log("Firebase Auth module loaded successfully");
-} else {
-    console.error("Firebase Auth module not loaded");
-}
-
 
 //--------------------------------------------------------------------------------
 var usr_uid, usr_token_id;
