@@ -1,16 +1,39 @@
 console.log("FBjs: Firebase JS file started successfully!!!");
 
 //--------------------------------------------------------------------------------
-import { f_config, data1, data2 } from './fb_env.js';
+// public/driver.js
+import { getConfig } from './fb_get.js';
 
-var firebaseConfig = f_config;
+getConfig().then(config => {
+    const f_config = {
+        apiKey: config.apiKey,
+        authDomain: config.authDomain,
+        projectId: config.projectId,
+        storageBucket: config.storageBucket,
+        messagingSenderId: config.messagingSenderId,
+        appId: config.appId,
+        measurementId: config.measurementId,
+        databaseURL: config.databaseURL,
+    };
 
-const firebaseConfigSpecific = JSON.parse(firebaseConfig);
+    const data1 = config.var1;
+    const data2 = config.var2;
 
+    console.log(f_config, data1, data2);
+
+    // Initialize Firebase with the config
+    firebase.initializeApp(f_config);
+
+    // Additional code to use data1 and data2
+}).catch(error => {
+    console.error('Error fetching configuration:', error);
+});
+
+
+firebaseConfigSpecific = f_config;
 console.log("Firebase Config Extracted: ");
-console.log("firebaseConfig: ", firebaseConfig);
-console.log("TYPE: ", typeof (firebaseConfig));
 console.log("firebaseConfigSpecific: ", firebaseConfigSpecific);
+console.log("TYPE: ", typeof (firebaseConfigSpecific));
 // console.log(typeof (fireConfig));
 
 
