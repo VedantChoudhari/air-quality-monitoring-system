@@ -80,7 +80,11 @@
     </div>
 
     <div id="bottom">
-      <p id="last_updated" title="Click to stop fetching data."></p>
+      <div id="in_one_line">
+        <p id="last_updated" title="Click to stop fetching data."></p>
+        <p id="ideal_mode" title="Click here to get 24 hour pre-uploaded data.">Load 24 hour data</p>
+      </div>
+
       <hr>
 
       <p id="copyrights">
@@ -167,9 +171,12 @@
 
     console.log("Imported test_variable: ", var_random);
 
-    async function get_firebase_node() {
-      // console.log("Reached the function required!!!");
-      var bs_obj = await get_data();
+    async function get_firebase_node(ideal_mode = false) {
+      // 'ideal_mode' is default 'FALSE' param, unless the fn is called with 'TRUE' as parameter
+
+      // get real time branch data if not in ideal mode
+      // else, get data from ideal mode branch
+      var bs_obj = await get_data(ideal_mode);
       bs_obj_global = bs_obj;
 
       plot2_temperature(bs_obj.bs_temp);
@@ -213,6 +220,16 @@
     // Initialize data fetching
     var interval_id = setInterval(get_firebase_node, fetch_interval);
     stamp.addEventListener('click', toggleFetchingData);
+
+    const ideal_mode = document.getElementById('ideal_mode');
+    ideal_mode.addEventListener('click', () => {
+      get_firebase_node(ideal_mode = true)
+      stamp.style.color = 'grey';
+      ideal_mode.style.color = 'grey';
+    });
+    // if it is called like this below, it will always be called instead of onClick event
+    // because we need to pass the pointer_of_fn and not fn call()
+    // ideal_mode.addEventListener('click', get_firebase_node(ideal_mode=true));
   </script>
 
 </body>

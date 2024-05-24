@@ -1,4 +1,4 @@
-// public/fb_get.js
+// fb_get.js
 console.log("FBget: Firebase dependency file loaded!!!");
 
 // Function to fetch configuration from the serverless function

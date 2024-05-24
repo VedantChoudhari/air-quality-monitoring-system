@@ -73,7 +73,7 @@ function login(time_pass) {
             usr_uid = response.user.uid;
             usr_token_id = response.user.accessToken;
 
-            alert("User signed in successfully: " + usr_uid);
+            alert("Authentication successful: ");
             console.log(usr_uid + " signed in successfully...");
         })
         .catch((error) => {
@@ -86,7 +86,7 @@ function login(time_pass) {
 //--------------------------------------------------------------------------------
 var firebase_node;
 
-async function get_data() {
+async function get_data(ideal_mode = false) {
     let t = new Date();
     console.log("fn get_data() called @ " + t);
 
@@ -94,8 +94,16 @@ async function get_data() {
 
     var db_ref = ref(db);
 
+    var loc = "";
+    if (!ideal_mode) {
+        loc = "users/" + usr_uid + "/full_day_data"
+    }
+    else {
+        loc = "users/" + usr_uid + "/live_data"
+    }
+
     // get(child(db_ref, "users/" + usr_uid + "/fire_node"), usr_token_id)
-    return get(child(db_ref, "users/" + usr_uid), usr_token_id)
+    return get(child(db_ref, loc), usr_token_id)
         .then((response_node) => {
             firebase_node = response_node;
 
@@ -159,7 +167,7 @@ async function get_data() {
                     !isNaN(reading.mq4);
             }
 
-            console.log("Fire_Node = " + bs_fire + " Gas_Node = " + bs_gas);
+            console.log("Fire_Node = " + bs_fire + "; Gas_Node = " + bs_gas);
             // console.log("Done processing the data received from the firebase...");
 
             var result = {
@@ -183,5 +191,4 @@ async function get_data() {
 }
 
 var var_random = "bhushan_s";
-// console.log("FBjs: EOF");
 export { login, get_data, var_random, firebase_node };

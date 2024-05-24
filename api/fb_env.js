@@ -1,4 +1,4 @@
-// vercel will run this on server side
+// vercel will run this on server side.
 
 export default (req, res) => {
   res.json({

@@ -168,6 +168,20 @@ p {
     cursor: pointer;
 }
 
+#ideal_mode {
+    color: #FB9039;
+    font-size: 1.25rem;
+    text-align: left;
+    cursor: pointer;
+}
+
+#in_one_line{
+    display: flex;
+    text-align: right;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
 /* Media query for phones */
 @media only screen and (max-width: 1150px) {
     .data {
