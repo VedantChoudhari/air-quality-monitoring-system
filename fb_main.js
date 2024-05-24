@@ -63,11 +63,11 @@ console.log("Firebase initialized successfully");
 //--------------------------------------------------------------------------------
 var usr_uid, usr_token_id;
 
-function login(time_pass) {
+async function login(time_pass) {
     let t = new Date();
     console.log("fn login() called @ " + t);
 
-    signInWithEmailAndPassword(auth, data2, data1)
+    return signInWithEmailAndPassword(auth, data2, data1)
         .then((response) => {
             // console.log(response);
             usr_uid = response.user.uid;
@@ -183,8 +183,6 @@ async function get_data(ideal_mode = false) {
                 bs_fire: bs_fire,
                 total_length: bs_temp.length
             };
-
-            console.log("DEBUG result:", result);
 
             // Return the result object
             return result;
