@@ -1,9 +1,22 @@
 function plot2_temperature(bs_temp) {
   // Data for the chart
+  const len = bs_hum.length;
+  const div = Math.floor(len / 24);
+  let j = 0;
+  let num = 0;
   xValues = [];
-  for (var i = 0; i < bs_temp.length; i++) {
-    xValues.push(i + 1);
+
+  for (let i = 0; i < len - 1; i++) {
+    if (i == num && j != 24) {
+      xValues.push(`${j}:00`);
+      num += div;
+      j++;
+    }
+    else {
+      xValues.push("xx:" + i);
+    }
   }
+  xValues.push('24:00');
 
   // Trace for the chart
   var trace = {

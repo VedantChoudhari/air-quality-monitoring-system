@@ -13,7 +13,7 @@ function plot2_humidity(bs_hum) {
   let j = 0;
   let num = 0;
   xValues = [];
-  1
+  
   for (let i = 0; i < len - 1; i++) {
     if (i == num && j != 24) {
       xValues.push(`${j}:00`);      // 4:00
