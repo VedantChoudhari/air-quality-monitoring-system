@@ -221,15 +221,15 @@
     var interval_id = setInterval(get_firebase_node, fetch_interval);
     stamp.addEventListener('click', toggleFetchingData);
 
-    const ideal_mode = document.getElementById('ideal_mode');
-    ideal_mode.addEventListener('click', () => {
+    const ideal_mode_btn = document.getElementById('ideal_mode');
+    ideal_mode_btn.addEventListener('click', () => {
       get_firebase_node(ideal_mode = true)
       stamp.style.color = 'grey';
-      ideal_mode.style.color = 'grey';
+      ideal_mode_btn.style.color = 'grey';
     });
     // if it is called like this below, it will always be called instead of onClick event
     // because we need to pass the pointer_of_fn and not fn call()
-    // ideal_mode.addEventListener('click', get_firebase_node(ideal_mode=true));
+    // ideal_mode_btn.addEventListener('click', get_firebase_node(ideal_mode=true));
   </script>
 
 </body>
