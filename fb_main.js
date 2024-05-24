@@ -96,10 +96,10 @@ async function get_data(ideal_mode = false) {
 
     var loc = "";
     if (!ideal_mode) {
-        loc = "users/" + usr_uid + "/full_day_data"
+        loc = "users/" + usr_uid + "/live_data";
     }
     else {
-        loc = "users/" + usr_uid + "/live_data"
+        loc = "users/" + usr_uid + "/full_day_data";
     }
 
     // get(child(db_ref, "users/" + usr_uid + "/fire_node"), usr_token_id)
