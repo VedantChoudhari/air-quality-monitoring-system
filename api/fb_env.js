@@ -1,5 +1,3 @@
-// vercel will run this on server side.
-
 export default (req, res) => {
   res.json({
     apiKey: process.env.REACT_APP_api_key,
