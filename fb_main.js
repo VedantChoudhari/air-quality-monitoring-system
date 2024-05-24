@@ -54,17 +54,19 @@ const { getAuth } = await import('https://www.gstatic.com/firebasejs/10.8.1/fire
 // wait to fetch config:
 await initFirebase();
 
+// Initialize Firebase with the fetched config
+const app = initializeApp(f_config);
+const auth = getAuth(app);
+const db = getDatabase(app);
+console.log("Firebase initialized successfully");
+
+
 if (auth) {
     console.log("Firebase Auth module loaded successfully");
 } else {
     console.error("Firebase Auth module not loaded");
 }
 
-// Initialize Firebase with the fetched config
-const app = initializeApp(f_config);
-const auth = getAuth(app);
-const db = getDatabase(app);
-console.log("Firebase initialized successfully");
 
 //--------------------------------------------------------------------------------
 var usr_uid, usr_token_id;
