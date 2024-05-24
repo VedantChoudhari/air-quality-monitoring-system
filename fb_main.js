@@ -1,45 +1,52 @@
 console.log("FBjs: Firebase JS file started successfully!!!");
 
 //--------------------------------------------------------------------------------
-// public/driver.js
-import { getConfig } from './fb_get.js';
-
-getConfig().then(config => {
-    const f_config = {
-        apiKey: config.apiKey,
-        authDomain: config.authDomain,
-        projectId: config.projectId,
-        storageBucket: config.storageBucket,
-        messagingSenderId: config.messagingSenderId,
-        appId: config.appId,
-        measurementId: config.measurementId,
-        databaseURL: config.databaseURL,
-    };
-
-    const data1 = config.var1;
-    const data2 = config.var2;
-
-    const firebaseConfigSpecific = f_config;
-    console.log("Firebase Config Extracted: ");
-
-}).catch(error => {
-    console.error('Error fetching configuration:', error);
-});
-
-
-//--------------------------------------------------------------------------------
 // firebase app:
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
 
-// firebase database:
-import { getDatabase, ref, child, get, onValue } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
+// import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
 
-// firebase auth:
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+// // firebase database:
+// import { getDatabase, ref, child, get, onValue } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
 
-const app = initializeApp(firebaseConfigSpecific);
-const auth = getAuth(app);
-const db = getDatabase();
+// // firebase auth:
+// import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+
+// // get config from .env
+// import { getConfig } from './fb_get.js';
+
+
+// getConfig().then(config => {
+//     const f_config = {
+//         apiKey: config.apiKey,
+//         authDomain: config.authDomain,
+//         projectId: config.projectId,
+//         storageBucket: config.storageBucket,
+//         messagingSenderId: config.messagingSenderId,
+//         appId: config.appId,
+//         measurementId: config.measurementId,
+//         databaseURL: config.databaseURL,
+//     };
+
+//     const data1 = config.var1;
+//     const data2 = config.var2;
+
+//     const firebaseConfigSpecific = f_config;
+//     console.log("Firebase Config Extracted: ");
+
+//     const app = initializeApp(firebaseConfigSpecific);
+//     const auth = getAuth(app);
+//     const db = getDatabase();
+
+// }).catch(error => {
+//     console.error('Error fetching configuration:', error);
+// });
+
+// get config from .env
+import { app, auth, db } from './fb_get.js';
+const app = app;
+const auth = auth;
+const db = db;
+
 
 //--------------------------------------------------------------------------------
 var usr_uid, usr_token_id;
