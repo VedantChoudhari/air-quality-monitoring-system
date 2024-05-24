@@ -102,7 +102,7 @@ async function get_data(ideal_mode = false) {
         loc = "users/" + usr_uid + "/full_day_data";
     }
 
-    console.log("DEBUG:", loc);
+    // console.log("DEBUG:", loc);
 
     // get(child(db_ref, "users/" + usr_uid + "/fire_node"), usr_token_id)
     return get(child(db_ref, loc), usr_token_id)
