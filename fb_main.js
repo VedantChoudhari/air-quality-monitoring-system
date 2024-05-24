@@ -43,9 +43,6 @@ console.log("FBjs: Firebase JS file started successfully!!!");
 
 // get config from .env
 import { app, auth, db } from './fb_get.js';
-const app = app;
-const auth = auth;
-const db = db;
 
 
 //--------------------------------------------------------------------------------
