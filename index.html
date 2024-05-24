@@ -127,7 +127,7 @@
 
   <script>
     var bs_obj_global;
-    var data_fetch_status = true;
+    var data_fetch_status = false;
     var get_firebase_node;
   </script>
 
@@ -197,10 +197,9 @@
 
     login(123);
 
-    // Part to handle the update on screen and toggle the data fetch..
-    var stamp = document.getElementById("last_updated");
-    const fetch_interval = 15 * 1000;
-    // 15 sec
+    // var for managing the setInterval for automatic calls of fetch data
+    var interval_id;
+    const fetch_interval = 15 * 1000;     // 15 sec
 
     function toggleFetchingData() {
       if (data_fetch_status) {
@@ -218,16 +217,30 @@
     }
 
     // Initialize data fetching
-    var interval_id = setInterval(get_firebase_node, fetch_interval);
+    get_firebase_node(ideal_mode = false);
+
+    // 'last updated' as event listener
+    var stamp = document.getElementById("last_updated");
     stamp.addEventListener('click', toggleFetchingData);
 
+    // 'ideal mode' as event listener
     const ideal_mode_btn = document.getElementById('ideal_mode');
     ideal_mode_btn.addEventListener('click', () => {
       console.log("Loading 24 hour data...");
+
+      // stop auto fetch of data (with some fix interval) if its already ON
+      if (data_fetch_status) {
+        clearInterval(interval_id);
+        stamp.style.color = 'grey';
+        stamp.title = "Not fetching the live data from server!";
+        data_fetch_status = false;
+      }
+
       get_firebase_node(ideal_mode = true);
       stamp.style.color = 'grey';
       toggleFetchingData();
     });
+    
     // if it is called like this below, it will always be called instead of onClick event
     // because we need to pass the pointer_of_fn and not fn call()
     // ideal_mode_btn.addEventListener('click', get_firebase_node(ideal_mode=true));

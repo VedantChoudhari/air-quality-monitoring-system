@@ -16,7 +16,7 @@ function plot2_temperature(bs_temp) {
       xValues.push("xx:" + i);
     }
   }
-  xValues.push('24:00');
+  xValues.push('23:59');
 
   // Trace for the chart
   var trace = {
@@ -42,7 +42,7 @@ function plot2_temperature(bs_temp) {
     xaxis: {
       color: 'white',
       title: 'Time',
-      tickvals: ["0:00", "4:00", "8:00", "12:00", "16:00", "20:00", "24:00"]
+      tickvals: ["0:00", "4:00", "8:00", "12:00", "16:00", "20:00", "23:59"]
     },
     yaxis: {
       color: 'white', // Y-axis text color

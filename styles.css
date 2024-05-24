@@ -162,7 +162,7 @@ p {
 }
 
 #last_updated {
-    color: #FB9039;
+    color: grey;
     font-size: 1.25rem;
     text-align: right;
     cursor: pointer;

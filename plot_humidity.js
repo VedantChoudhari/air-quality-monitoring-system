@@ -24,7 +24,7 @@ function plot2_humidity(bs_hum) {
       xValues.push("xx:" + i);      // xx:32
     }
   }
-  xValues.push('24:00');            // 24:00 last one!
+  xValues.push('23:59');            // 23:59 last one!
 
 
   // Trace for the chart
@@ -51,7 +51,7 @@ function plot2_humidity(bs_hum) {
     xaxis: {
       color: 'white',
       title: 'Time',
-      tickvals: ["0:00", "4:00", "8:00", "12:00", "16:00", "20:00", "24:00"]
+      tickvals: ["0:00", "4:00", "8:00", "12:00", "16:00", "20:00", "23:59"]
     },
     yaxis: {
       color: 'white',
