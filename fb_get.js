@@ -13,13 +13,13 @@ export const getConfig = async () => {
 };
 
 // Function to initialize Firebase and export Firebase services
-export let app, auth, db;
+export let f_config;
 
 export const initFirebase = async () => {
     try {
         const config = await getConfig();
 
-        const f_config = {
+        f_config = {
             apiKey: config.apiKey,
             authDomain: config.authDomain,
             projectId: config.projectId,
@@ -32,17 +32,6 @@ export const initFirebase = async () => {
 
         console.log("Firebase Config Extracted: ", f_config);
 
-        // Import Firebase modules
-        const { initializeApp } = await import('https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js');
-        const { getDatabase } = await import('https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js');
-        const { getAuth } = await import('https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js');
-
-        // Initialize Firebase with the fetched config
-        app = initializeApp(f_config);
-        auth = getAuth(app);
-        db = getDatabase(app);
-
-        console.log("Firebase initialized successfully");
     } catch (error) {
         console.error('Error initializing Firebase:', error);
     }
