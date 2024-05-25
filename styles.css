@@ -168,7 +168,6 @@ p {
     justify-content: space-between;
 }
 
-
 #errBox {
     min-height: 75vh;
     max-height: 90vh;
@@ -310,7 +309,7 @@ p {
 }
 
 
-/* Media query for phones */
+/* Media query for tab etc */
 @media only screen and (max-width: 1150px) {
     .data {
         align-items: center;
@@ -338,6 +337,7 @@ p {
 
 }
 
+/* Media query for phones */
 @media only screen and (max-width: 800px) {
     .plot2d {
         width: 100%;
@@ -364,6 +364,77 @@ p {
         font-size: 0.75rem;
     }
 }
+
+
+@media only screen and (max-width: 655px){
+    #errTitle>#main {
+        padding: 1rem 1rem;
+        font-size: 2.5rem;
+    }
+
+    #warning_icon {
+        margin-left: 1.5rem;
+        width: 4rem;
+    }
+
+    #warning_title {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        gap: 0.1rem;
+    }
+
+    #warning_title_text {
+        font-size: 2rem;
+    }
+
+    #warning_detail {
+        font-size: 1.5rem;
+        width: 95%;
+    }
+
+    #contacts {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+    }
+
+    #contacts>div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 0.2rem;
+    }
+
+    #contacts p {
+        line-height: 0.5rem;
+        font-size: 1.2rem;
+        margin-right: 0.5rem;
+    }
+
+    .em_icon {
+        width: 2.75rem;
+    }
+
+    #contacts>div:hover,
+    #contacts>div:active {
+        transform: scale(1.25);
+    }
+
+    #close_btn {
+        right: 1%;
+        top: 1.5%;
+        height: 2rem;
+        width: 2rem;
+        border-radius: 20%;
+        font-size: 1.75rem;
+    }
+}
+
 
 /*
 een and (max-width: 1150px) {
