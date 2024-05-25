@@ -100,12 +100,45 @@
   </div>
 
   <div id="errBox">
-    <h2>Emergency Warning</h2>
-    <h3 id="warning_title"></h3>
-    <h3 id="warning_detail"></h3>
-    <h2 id="pol">Police Number: 112</h2>
-    <h2 id="amb">Ambulance Number: 108</h2>
-    <button type="button" onclick="activate_error_box(false, false)">Close</button>
+    <div id="errBoxContent">
+
+      <div id="errTitle">
+        <!-- <h2 id="main">Emergency Warning System</h2> -->
+        <h2 id="main">Emergency Alert System</h2>
+      </div>
+
+      <div id="errWarning">
+
+        <div id="warning_title">
+          <img id="warning_icon" src="assets/rainy-day.png">
+          <h3 id="warning_title_text"></h3>
+        </div>
+
+        <span id="warning_detail"></span>
+
+      </div>
+
+      <div id="contacts">
+        <div class="em_contacts">
+          <!-- <img src="./assets/police-car.png" alt="Police" id="em_icon"> -->
+          <img src="./assets/police.png" alt="Police" class="em_icon">
+          <p id="police">112</p>
+        </div>
+
+        <div class="em_contact">
+          <img src="./assets/ambulance.png" alt="Ambulance" class="em_icon">
+          <p id="ambulance">108</p>
+        </div>
+
+        <div class="em_contact">
+          <!-- <img src="./assets/firefighter.png" alt="Fire-Brigade" id="em_icon"> -->
+          <img src="./assets/firetruck.png" alt="Fire-Brigade" class="em_icon">
+          <p id="fire_brigade">104</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="close_btn" onclick="activate_error_box(false, false)">X</div>
   </div>
 
   <!-- Main renderer -->
@@ -218,7 +251,7 @@
 
     // Initialize data fetching
     await login(123);
-    await get_firebase_node(ideal_mode=false);
+    await get_firebase_node(ideal_mode = false);
 
     // 'last updated' as event listener
     var stamp = document.getElementById("last_updated");
@@ -237,7 +270,7 @@
         data_fetch_status = false;
       }
 
-      get_firebase_node(ideal_mode=true);
+      get_firebase_node(ideal_mode = true);
       stamp.style.color = 'grey';
     });
 
