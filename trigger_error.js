@@ -3,6 +3,7 @@ const mn = document.getElementById('main');
 const warning_title = document.getElementById('warning_title');
 const warning_detail = document.getElementById('warning_detail');
 const err_box = document.getElementById('errBox');
+const err_icon = document.getElementById('warning_icon');
 
 function activate_error_box(fire, gas) {
     if (fire || gas) {
