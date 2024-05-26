@@ -6,11 +6,11 @@ This repository contains the website created to display the content of <u>real-t
 
 ## Description
 &nbsp; &nbsp; &nbsp;
-This was created for the project under the course `(BCSE313L) Fog and Edge Computing` at VIT-Chennai.  
+This project was developed as part of the `(BCSE313L) Fog and Edge Computing` course at VIT-Chennai.  
 &nbsp; &nbsp; &nbsp;
-Website provides a responsive dashboard for visual representation of the previously-recorded and real-time data collected using the sensors and other hardware components.  
+The website serves as a responsive dashboard, offering visual representations of both historical and real-time data collected from various sensors and hardware components.  
 &nbsp; &nbsp; &nbsp;
-As a pre-requisite for the project under subject, ths project follows C2F2T and its reverse model as explained in subsequent section.
+As a pre-requisite for the project in the subject, this project adheres to the C2F2T (Cloud-to-Fog-to-Things and its reverse) model, as explained in the subsequent section.
 
 
 ## Table of Contents
@@ -18,28 +18,45 @@ As a pre-requisite for the project under subject, ths project follows C2F2T and 
 - [`Air Quality` (HVAC) Monitoring Web App](#air-quality-hvac-monitoring-web-app)
   - [Description](#description)
   - [Table of Contents](#table-of-contents)
-  - [Links](#links)
-  - [Project Overview](#project-overview)
   - [Features](#features)
   - [Tech-Stack 💻](#tech-stack-)
+  - [Project Overview](#project-overview)
+  - [C2F2T Architecture](#c2f2t-architecture)
+  - [Links](#links)
   - [Team-mates](#team-mates)
   - [Contributions](#contributions)
     - [Contact](#contact)
 
-## Links
 
-1. Visit the deployed project on Vercel:  
-    [Vercel Deployment Link](https://airqualitybbs.vercel.app/)
+## Features
 
-2. Clone the repository:
-    ```bash
-    git clone https://github.com/Bbs1412/air-quality-monitoring-system
+   1. **Real-time Monitoring** ⏳  
+      Continuously tracks air quality levels, providing instant data updates for timely analysis and response.
 
-    cd air-quality-monitoring-system
-    ```
+   1. **Low Latency Operations**   
+      Ensures minimal delay in data processing and visualization, allowing for accurate real-time insights and decisions.
+      
+   1. **Emergency Alert System** ⚠️  
+      Automatically sends immediate alerts for critical air quality levels, including fire or gas leakage detection, ensuring rapid response to potential hazards.
 
-3. Preliminary Repository:  
-    [Link to repository](https://github.com/Basilskar/air-quality-monitoring-system)
+   1. **Comprehensive Data Collection**  
+      Utilizes a variety of sensors to gather diverse and comprehensive environmental data.
+
+   1. **Robust Data Storage** ☁️  
+      Utilizes Firebase for reliable and scalable NoSQL database storage, ensuring data integrity and accessibility. Enabling robust data management and retrieval.
+
+   1. **User-Friendly Web Interface**  
+       Provides a fully functional and responsive website, featuring regular updates and a comprehensive view of air quality data anywhere.
+
+
+## Tech-Stack 💻
+   - Python
+   - HTML
+   - CSS
+   - JavaScript
+   - Firebase
+   <!-- - NodeJS (partly) -->
+
 
 ## Project Overview
 
@@ -78,34 +95,48 @@ As a pre-requisite for the project under subject, ths project follows C2F2T and 
         The website also features an Emergency Alert System, which can be a lifesaver in cases of fire or gas leakage in the monitored area.
 
 
-## Features
+## C2F2T Architecture
+   
+   1. Cloud-to-Things:  
+      - This aspect involves the flow of data and services from the cloud to the edge devices or "things" (such as sensors, actuators, or IoT devices).
+   1. Things-to-Cloud:  
+      - In contrast to C2T, T2C refers to the flow of data and services from the edge devices or "things" to the cloud.  
+   1. Bidirectional Communication:  
+      - The C2F2T model emphasizes bidirectional communication between the cloud and edge devices, enabling seamless interaction and data exchange in both directions.   
+      - This approach benefits from various hardware computing power at different nodes in the IoT ecosystem.  
+      - Bidirectional communication enables real-time monitoring, control, and decision-making capabilities at the edge while leveraging the extensive computational and storage capabilities of the cloud.
+   1. In this project:  
+      1) **Things**:  
+         - All sensors act as things. 
+         - Things collect the data on ground level.  
+      2) **Edge**:  
+         - The edge device is an Arduino, which has limited computing power and basic computer functionalities.
+         - It collects and temporarily stores the data within its limited small storage capabilities.  
+      3) **Fog**:  
+         - A Raspberry Pi is the middle device in the project. It gets data from the edge level, filters, and processes it with its relatively large compute power.
+         - The RasPi thus acts as the fog layer.  
+      4) **Cloud**:  
+         - Finally, data is collected in the cloud.  
+         - This data is then used to serve the website.  
+         - The cloud can also be utilized to run predictive models and gain meaningful insights from the data.
+         - Thus, leverages the power of machine learning and the resource-intensive nature of cloud infrastructure.
 
-   1. **Real-time Monitoring** ⏳  
-      Continuously tracks air quality levels, providing instant data updates for timely analysis and response.
 
-   1. **Low Latency Operations**   
-      Ensures minimal delay in data processing and visualization, allowing for accurate real-time insights and decisions.
-      
-   1. **Emergency Alert System** ⚠️  
-      Automatically sends immediate alerts for critical air quality levels, including fire or gas leakage detection, ensuring rapid response to potential hazards.
+## Links
 
-   1. **Comprehensive Data Collection**  
-      Utilizes a variety of sensors to gather diverse and comprehensive environmental data.
+1. Visit the deployed project on Vercel:  
+    [Vercel Deployment Link](https://airqualitybbs.vercel.app/)
 
-   1. **Robust Data Storage** ☁️  
-      Utilizes Firebase for reliable and scalable NoSQL database storage, ensuring data integrity and accessibility. Enabling robust data management and retrieval.
+2. Clone the repository:
+    ```bash
+    git clone https://github.com/Bbs1412/air-quality-monitoring-system
 
-   1. **User-Friendly Web Interface**  
-       Provides a fully functional and responsive website, featuring regular updates and a comprehensive view of air quality data anywhere.
+    cd air-quality-monitoring-system
+    ```
 
+3. Preliminary Repository:  
+    [Link to repository](https://github.com/Basilskar/air-quality-monitoring-system)
 
-## Tech-Stack 💻
-   - Python
-   - HTML
-   - CSS
-   - JavaScript
-   - Firebase
-   <!-- - NodeJS (partly) -->
 
 ## Team-mates 
 
@@ -113,7 +144,7 @@ As a pre-requisite for the project under subject, ths project follows C2F2T and 
    2. Basil Skaria
    3. Vedant Choudhari
    4. Ujjawal Kumar
-  
+   
 ## Contributions  
 
    Any contributions or suggestions are welcome! 
