@@ -2,7 +2,7 @@
 
 <!-- <hr> -->
 
-This repository contains the website created to display the content of <u>real-time</u> HVAC <i>(Heating, ventilation, and air conditioning)</i> data monitoring.
+This repository contains the website created to display the content of <u>real-time</u> HVAC <i>(Heat, ventilation, and air conditioning)</i> data monitoring.
 
 ## Description
 &nbsp; &nbsp; &nbsp;
@@ -47,7 +47,8 @@ As a pre-requisite for the project in the subject, this project adheres to the C
 
    1. **User-Friendly Web Interface**  
        Provides a fully functional and responsive website, featuring regular updates and a comprehensive view of air quality data anywhere.
-
+       <!-- screenshot of website * 2
+             future_work_here -->
 
 ## Tech-Stack 💻
    - Python
@@ -60,33 +61,35 @@ As a pre-requisite for the project in the subject, this project adheres to the C
 
 ## Project Overview
 
-   * **Data Collection:**  
+   * **`Data Collection:`**  
         &nbsp; &nbsp; &nbsp;
         Data is collected by using various sensors such as MQ-series sensors, DHT-11, and flame sensors.  
         &nbsp; &nbsp; &nbsp;
         An Arduino periodically reads the data from these sensors.
 
-   *  **Data Passage:**  
+   *  **`Data Passage:`**  
         &nbsp; &nbsp; &nbsp;
         Data collected from the sensors by Arduino is passed to the Raspberry-Pi using serial communication at appropriate baud-rate.
 
-   * **Data Filtering and Display:**  
+   * **`Data Filtering and Display:`**  
         &nbsp; &nbsp; &nbsp;
         The Raspberry Pi splits, filters, and processes the received data locally.  
         &nbsp; &nbsp; &nbsp;
         Weather predictions are fetched using an API for the day and night at the specified location.  
         &nbsp; &nbsp; &nbsp;
         Based on the latest locally received data and online predictions, display graphics are generated and updated on an the LCD-TFT display.  
+        <!-- Image of LCD-TFT here
+        future_work_here -->
         &nbsp; &nbsp; &nbsp;
         Further, the data is passed to the cloud for storage and further access.
 
-   * **Data Storage:**  
+   * **`Data Storage:`**  
         &nbsp; &nbsp; &nbsp;
         Firebase, a NoSQL database, is utilized to create, retrieve, and update data.  
         &nbsp; &nbsp; &nbsp;
         The data received in this series is stored under specific firebase nodes.
 
-   * **Web Interface:**  
+   * **`Web Interface:`**  
         &nbsp; &nbsp; &nbsp;
         A fully functional and responsive website is created and deployed on vercel.  
         &nbsp; &nbsp; &nbsp;
@@ -99,13 +102,19 @@ As a pre-requisite for the project in the subject, this project adheres to the C
    
    1. Cloud-to-Things:  
       - This aspect involves the flow of data and services from the cloud to the edge devices or "things" (such as sensors, actuators, or IoT devices).
+      
    1. Things-to-Cloud:  
       - In contrast to C2T, T2C refers to the flow of data and services from the edge devices or "things" to the cloud.  
+      
    1. Bidirectional Communication:  
       - The C2F2T model emphasizes bidirectional communication between the cloud and edge devices, enabling seamless interaction and data exchange in both directions.   
       - This approach benefits from various hardware computing power at different nodes in the IoT ecosystem.  
       - Bidirectional communication enables real-time monitoring, control, and decision-making capabilities at the edge while leveraging the extensive computational and storage capabilities of the cloud.
-   1. In this project:  
+
+   1. In this project: 
+      <!-- Image of projects C2F2T arch
+      future_work_here -->
+    
       1) **Things**:  
          - All sensors act as things. 
          - Things collect the data on ground level.  
@@ -127,16 +136,21 @@ As a pre-requisite for the project in the subject, this project adheres to the C
 1. Visit the deployed project on Vercel:  
     [Vercel Deployment Link](https://airqualitybbs.vercel.app/)
 
-2. Clone the repository:
+1. Clone the repository:
     ```bash
     git clone https://github.com/Bbs1412/air-quality-monitoring-system
 
     cd air-quality-monitoring-system
     ```
 
-3. Preliminary Repository:  
-    [Link to repository](https://github.com/Basilskar/air-quality-monitoring-system)
+<!-- 3. Video demonstration of project implementation:
+   [Redirect to LinkedIn](https://--------) 
+   future_work_here
+   update the numbers as well
+   -->
 
+3. Preliminary Repository:  
+   [Link to repository](https://github.com/Basilskar/air-quality-monitoring-system)
 
 ## Team-mates 
 
