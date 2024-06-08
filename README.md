@@ -48,14 +48,7 @@ As a pre-requisite for the project in the subject, this project adheres to the C
    1. **User-Friendly Web Interface**  
        Provides a fully functional and responsive website, featuring regular updates and a comprehensive view of air quality data anywhere.
         
-      <div class="website">
-         <img src="./public/Screenshot (440).png" id="web_scr" alt="Recent readings on dashboard">
-         <img src="./public/Screenshot (441).png" id="web_scr" alt="Humidity variation plot">
-         <img src="./public/Screenshot (442).png" id="web_scr" alt="3D analysis plot">
-         <img src="./public/Screenshot (443).png" id="web_scr" alt="3D analysis plot 2">
-         <img src="./public/Screenshot (444).png" id="web_scr" alt="3D analysis plot 2">
-         <img src="./public/alerts.png" id="web_scr" alt="3D analysis plot 2">
-      </div>
+      <img src="./public/edit_web.png" alt="website screenshots" style="max-width: 850px;">
 
 
 ## Tech-Stack 💻
@@ -78,9 +71,8 @@ As a pre-requisite for the project in the subject, this project adheres to the C
    *  **`Data Passage:`**  
         &nbsp; &nbsp; &nbsp;
         Data collected from the sensors by Arduino is passed to the Raspberry-Pi using serial communication at appropriate baud-rate.  
-        <div class="centre">
-           <img  src="./public/ser_full.jpeg" width="250px" alt="Description of Image" />
-        </div>
+
+        <img  src="./public/ser_full.jpeg" width="250px" alt="Description of Image" />
 
 
    * **`Data Filtering and Display:`**  
@@ -90,10 +82,11 @@ As a pre-requisite for the project in the subject, this project adheres to the C
         Weather predictions are fetched using an API for the day and night at the specified location.  
         &nbsp; &nbsp; &nbsp;
         Based on the latest locally received data and online predictions, display graphics are generated and updated on an the LCD-TFT display.  
-        <div class="responsive-grid centre" id="lcd">
-         <img src="./public/runtime_display_gen.png" alt="C2F2T in heart rate monitor." />
-         <img src="./public/runtime_display_pic.png" alt="Hierarchy of C2F2T and latency" />
-        </div>
+        
+       <img src="./public/runtime_display_gen.png" alt="C2F2T in heart rate monitor." width="250px"/> 
+        &nbsp; &nbsp; &nbsp;
+       <img src="./public/runtime_display_pic.png" alt="Hierarchy of C2F2T and latency" width="250px"/>
+
         &nbsp; &nbsp; &nbsp;
         Further, the data is passed to the cloud for storage and further access.
 
@@ -112,9 +105,7 @@ As a pre-requisite for the project in the subject, this project adheres to the C
         The website also features an Emergency Alert System, which can be a lifesaver in cases of fire or gas leakage in the monitored area.
 
    * **`Hardware Setup:`**
-       <div id="hw">
-          <img src="./public/hardware.jpg" alt="Hardware">
-       <div>
+      <img src="./public/hardware.jpg" alt="Hardware" style="max-width: 600px;">
 
 ## C2F2T Architecture
    
@@ -129,11 +120,9 @@ As a pre-requisite for the project in the subject, this project adheres to the C
       - This approach benefits from various hardware computing power at different nodes in the IoT ecosystem.  
       - Bidirectional communication enables real-time monitoring, control, and decision-making capabilities at the edge while leveraging the extensive computational and storage capabilities of the cloud.
 
-   1. In this project: 
-      <div class="responsive-grid centre">
-         <img src="./public/c2f2t_1.png" alt="C2F2T in heart rate monitor." />
-         <img src="./public/c2f2t_2.png" alt="Hierarchy of C2F2T and latency" />
-      </div>
+   1. In this project:   
+         <img src="./public/c2f2t_1.png" alt="C2F2T in heart rate monitor." style="width: 300px"/>
+         <img src="./public/c2f2t_2.png" alt="Hierarchy of C2F2T and latency" style="width: 300px; height: 257px"/>
     
       1) **Things**:  
          - All sensors act as things. 
@@ -191,51 +180,3 @@ As a pre-requisite for the project in the subject, this project adheres to the C
 
 <!-- ## Acknowledgments -->
    <!-- - Thanks to .. for ... -->
-
-<style>
-   .responsive-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-left: 25px;
-   }
-
-   .responsive-grid img {
-      width: 100%;
-      max-width: calc(50% - 1.5rem);
-      box-sizing: border-box;
-   }
-
-   .website{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-left: 15px;
-   }
-
-   .website > img{
-      width: 100%;
-      max-width: calc(50% - 0.5rem);
-      box-sizing: border-box;
-   }
-
-   #web_scr{
-      max-width: 500px;
-   }
-
-   .centre{
-      display: flex;
-      justify-content: left;
-   }
-
-   #lcd > img{
-      max-width: 250px;
-   }
-
-   #hw > img{
-      max-width: 450px;
-      margin-left: 10px;
-   }
-</style>
