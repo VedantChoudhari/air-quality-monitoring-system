@@ -4,6 +4,7 @@ function.txt
 git commands.txt
 bs_*
 *.bat
+*.sh
 node_modules/
 package*
 .env
@@ -11,3 +12,4 @@ bs_test.js
 initial_readings_2.js
 assets/extras
 README_work.md
+*.pptx
