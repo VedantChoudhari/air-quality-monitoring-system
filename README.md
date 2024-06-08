@@ -72,7 +72,8 @@ As a pre-requisite for the project in the subject, this project adheres to the C
         &nbsp; &nbsp; &nbsp;
         Data collected from the sensors by Arduino is passed to the Raspberry-Pi using serial communication at appropriate baud-rate.  
 
-        <img  src="./public/ser_full.jpeg" width="250px" alt="Description of Image" />
+        &nbsp; &nbsp; &nbsp;
+        <img src="./public/ser_full.jpeg" width="250px" alt="Description of Image" />
 
 
    * **`Data Filtering and Display:`**  
@@ -83,6 +84,7 @@ As a pre-requisite for the project in the subject, this project adheres to the C
         &nbsp; &nbsp; &nbsp;
         Based on the latest locally received data and online predictions, display graphics are generated and updated on an the LCD-TFT display.  
         
+        &nbsp; &nbsp; &nbsp;
        <img src="./public/runtime_display_gen.png" alt="C2F2T in heart rate monitor." width="250px"/> 
         &nbsp; &nbsp; &nbsp;
        <img src="./public/runtime_display_pic.png" alt="Hierarchy of C2F2T and latency" width="250px"/>
@@ -104,8 +106,9 @@ As a pre-requisite for the project in the subject, this project adheres to the C
         &nbsp; &nbsp; &nbsp;
         The website also features an Emergency Alert System, which can be a lifesaver in cases of fire or gas leakage in the monitored area.
 
-   * **`Hardware Setup:`**
-      <img src="./public/hardware.jpg" alt="Hardware" style="max-width: 600px;">
+   * **`Hardware Setup:`**  
+        &nbsp; &nbsp; &nbsp;
+      <img src="./public/hardware.jpg" alt="Hardware" width="600">
 
 ## C2F2T Architecture
    
@@ -121,8 +124,10 @@ As a pre-requisite for the project in the subject, this project adheres to the C
       - Bidirectional communication enables real-time monitoring, control, and decision-making capabilities at the edge while leveraging the extensive computational and storage capabilities of the cloud.
 
    1. In this project:   
+        &nbsp; &nbsp; &nbsp;
          <img src="./public/c2f2t_1.png" alt="C2F2T in heart rate monitor." style="width: 300px"/>
-         <img src="./public/c2f2t_2.png" alt="Hierarchy of C2F2T and latency" style="width: 300px; height: 257px"/>
+        &nbsp; &nbsp; &nbsp;
+         <img src="./public/c2f2t_2.png" alt="Hierarchy of C2F2T and latency" style="width: 350px; height: 257px"/>
     
       1) **Things**:  
          - All sensors act as things. 
