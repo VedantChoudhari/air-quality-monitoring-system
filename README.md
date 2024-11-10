@@ -177,10 +177,6 @@ As a pre-requisite for the project in the subject, this project adheres to the C
 
    Any contributions or suggestions are welcome! 
 
-### Contact
-
-   - **Email** - [bhushanbsongire@gmail.com](bhushanbsongire@gmail.com)
-   - **Git** - [Bbs1412](https://github.com/Bbs1412/)
 
 
 <!-- ## Acknowledgments -->
