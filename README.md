@@ -25,7 +25,7 @@ As a pre-requisite for the project in the subject, this project adheres to the C
   - [Links](#links)
   - [Team-mates](#team-mates)
   - [Contributions](#contributions)
-    - [Contact](#contact)
+
 
 
 ## Features
