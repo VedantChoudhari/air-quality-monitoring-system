@@ -168,7 +168,7 @@ As a pre-requisite for the project in the subject, this project adheres to the C
 
 ## Team-mates 
 
-   1. Bhushan Songire [(LinkedIn)](linkedin.co/in/bhushan-songire)
+   1. Bhushan Songire 
    2. Basil Skaria
    3. Vedant Choudhari [(LinkedIn)](linkedin.com/in/vedant-choudhari-1bbba4213)
    4. Ujjawal Kumar
